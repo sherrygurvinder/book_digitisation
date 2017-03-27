@@ -1,2 +1,2 @@
 # project
-degitization of old book
+degitisation of old book
