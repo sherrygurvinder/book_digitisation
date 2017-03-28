@@ -11,8 +11,8 @@ Text detection and recognition in general have quite a lot of relevant applicati
 <h1> Hardware/Software Requirements </h1>
 <ul>
   <h2> Hardware Requirements:-</h2>
-    <li> 1.OS Linux 64 bit</li>
-    <li> 2.512 GB (Minimum) On Linux</li>
+    <li> 1. OS Linux 64 bit</li>
+    <li> 2. 512 GB (Minimum) On Linux</li>
 </ul> 
   <ul>
   <h2> Software Requirements:-</h2>
@@ -25,12 +25,12 @@ Text detection and recognition in general have quite a lot of relevant applicati
      <li>1.5 Pandas</li>
      </ul>
   </li>
-  <li> 2.Pycharm</li>
-  <li> 3.Jupyter Notebook</li>
+  <li> 2. Pycharm</li>
+  <li> 3. Jupyter Notebook</li>
 </ul>
 <ul>
   <h2>BackEnd tools:-</h2>
-  <li>1.SQLITE3 </li>
+  <li>1. SQLITE3 </li>
 </ul>
 <h1>Implementation</h1>
 <p align="center">
