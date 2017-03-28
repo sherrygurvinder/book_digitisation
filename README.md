@@ -29,18 +29,18 @@ Text detection and recognition in general have quite a lot of relevant applicati
   <li> 3.Jupyter Notebook</li>
 </ul>
 <ul>
-  <h2>BackEnd tools:-<h2>
+  <h2>BackEnd tools:-</h2>
   <li>1.SQLITE3 </li>
 <ul>
 <h1>Implementation</h1>
 <p align="center">
-<span>SCAN THE BOOK</span>                                                   
-EXTRACT PAGES                   
-REFINE IMAGES
-1.CHANGE THRESHOLD
-2.NOICE REDUCTION
-3.ORIENATION
-OCR
+SCAN THE BOOK<br>                                                   
+EXTRACT PAGES<br>                  
+REFINE IMAGES<br>
+1.CHANGE THRESHOLD<br>
+2.NOICE REDUCTION<br>
+3.ORIENATION<br>
+OCR<br>
 </p>
 <ul>
 <h1>Constraints</h1>
