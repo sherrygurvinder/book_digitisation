@@ -32,3 +32,32 @@ Text detection and recognition in general have quite a lot of relevant applicati
   <h2>BackEnd tools:-<h2>
   <li>1.SQLITE3 </li>
 <ul>
+<h1>Implementation</h1>
+SCAN THE BOOK
+EXTRACT PAGES
+REFINE IMAGES
+
+
+1.CHANGE THRESHOLD
+
+
+2.NOICE REDUCTION
+
+
+3.ORIENATION
+OCR
+
+
+TO PDF,e.t.c
+%% Subgraph example
+ graph TB
+         subgraph one
+         a1-->a2
+         end
+         subgraph two
+         b1-->b2
+         end
+         subgraph three
+         c1-->c2
+         end
+         c1-->a2
