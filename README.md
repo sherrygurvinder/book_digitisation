@@ -61,3 +61,18 @@ No noise reduction in image.
 
 
 Image should be of good quality.
+||---|||
+#### Columns
+
+can save space.
+
+#### Prettify
+
+the page layout.
+
+*** promo
+#### Can be
+
+trendy.
+***
+|||---|||
