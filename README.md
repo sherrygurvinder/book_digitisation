@@ -33,7 +33,8 @@ Text detection and recognition in general have quite a lot of relevant applicati
 </ul>
 <h1>Implementation</h1>
 <p align="center">
-<h3>Steps</h3><br>
+h1 + p {Steps}
+<br>
 1.  SCAN THE BOOK<br>
          |<br>
          |<br>
@@ -51,7 +52,7 @@ Text detection and recognition in general have quite a lot of relevant applicati
 4.  OCR<br>
          |<br>
          |<br>
-5.  Result stores into specifice format for eg:pdf,word,etc          
+5.  Result stores into specifice format for eg:pdf,word,etc<br>       
 </p>
 <ul>
 <h1>Constraints</h1>
