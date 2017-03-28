@@ -1,4 +1,3 @@
-
 <h1>Digitization of old book </h1>
 <b> Introduction </b>
 In natural scenes ,the text part is generally found on nearby sign boards and other objects. The extraction of such text is
@@ -34,19 +33,24 @@ Text detection and recognition in general have quite a lot of relevant applicati
 </ul>
 <h1>Implementation</h1>
 <p align="center">
-1.0 SCAN THE BOOK<br>
+1.  SCAN THE BOOK<br>
          |<br>
-2.0 EXTRACT PAGES<br>
          |<br>
-3.0 REFINE IMAGES<br>
+2.  EXTRACT PAGES<br>
+         |<br>
+         |<br>
+3.  REFINE IMAGES<br>
+         |<br>
          |<br>
 3.1 CHANGE THRESHOLD<br>
 3.2 NOICE REDUCTION<br>
 3.3 ORIENATION<br>
          |<br>
-4.0 OCR<br>
          |<br>
-5 Result to specifice format for eg:pdf,word,etc          
+4.  OCR<br>
+         |<br>
+         |<br>
+5.  Result stores into specifice format for eg:pdf,word,etc          
 </p>
 <ul>
 <h1>Constraints</h1>
