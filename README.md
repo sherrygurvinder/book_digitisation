@@ -33,7 +33,8 @@ Text detection and recognition in general have quite a lot of relevant applicati
   <li>1.SQLITE3 </li>
 <ul>
 <h1>Implementation</h1>
-####SCAN THE BOOK
+|||---||| :6,3
+#### SCAN THE BOOK
 ####EXTRACT PAGES
 ####REFINE IMAGES
 
@@ -47,6 +48,10 @@ Text detection and recognition in general have quite a lot of relevant applicati
 ####3.ORIENATION
 ####OCR
 ####Result TO PDF,e.t.c
+
+|||---|||
+####
+
 <h1>Constraints</h1>
 Machine should read image clearly without
 blurring the image.
