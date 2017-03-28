@@ -33,7 +33,7 @@ Text detection and recognition in general have quite a lot of relevant applicati
 </ul>
 <h1>Implementation</h1>
 <p align="center">
-<h3><b>Steps</b><h3>
+<h3><b>Steps</b></h3>
 1.  SCAN THE BOOK<br>
          |<br>
          |<br>
