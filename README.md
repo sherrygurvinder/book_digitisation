@@ -33,7 +33,8 @@ Text detection and recognition in general have quite a lot of relevant applicati
   <li>1. SQLITE3 </li>
 </ul>
 <h1>Implementation</h1>
-<p align="center">
+<p align="center"
+    color="blue">
 Steps
 <br><br>
 1.  SCAN THE BOOK<br>
