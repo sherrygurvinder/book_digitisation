@@ -31,16 +31,22 @@ Text detection and recognition in general have quite a lot of relevant applicati
 <ul>
   <h2>BackEnd tools:-</h2>
   <li>1.SQLITE3 </li>
-<ul>
+</ul>
 <h1>Implementation</h1>
 <p align="center">
-SCAN THE BOOK<br>                                                   
-EXTRACT PAGES<br>                  
-REFINE IMAGES<br>
-1.CHANGE THRESHOLD<br>
-2.NOICE REDUCTION<br>
-3.ORIENATION<br>
-OCR<br>
+1.0 SCAN THE BOOK<br>
+         |<br>
+2.0 EXTRACT PAGES<br>
+         |<br>
+3.0 REFINE IMAGES<br>
+         |<br>
+3.1 CHANGE THRESHOLD<br>
+3.2 NOICE REDUCTION<br>
+3.3 ORIENATION<br>
+         |<br>
+4.0 OCR<br>
+         |<br>
+5 Result to specifice format for eg:pdf,word,etc          
 </p>
 <ul>
 <h1>Constraints</h1>
