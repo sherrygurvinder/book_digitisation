@@ -33,40 +33,19 @@ Text detection and recognition in general have quite a lot of relevant applicati
   <li>1.SQLITE3 </li>
 <ul>
 <h1>Implementation</h1>
-
-                                                     <p align="center">
-                                                      SCAN THE BOOK
-                                                    
-                                                      EXTRACT PAGES
-                                                      
-                                                      REFINE IMAGES
-                                                    1.CHANGE THRESHOLD
-                                                    2.NOICE REDUCTION
-                                                    3.ORIENATION
-                                                    
-                                                      OCR
-                                                      Result TO PDF,e.t.c
-                                                      </p>
-                                                      <p align="center">
-  <b>Some Links:</b><br>
-  <a href="#">Link 1</a> |
-  <a href="#">Link 2</a> |
-  <a href="#">Link 3</a>
-  <br><br>
-  <img src="http://s.4cdn.org/image/title/105.gif">
+<p align="center">
+<span>SCAN THE BOOK</span>                                                   
+EXTRACT PAGES                   
+REFINE IMAGES
+1.CHANGE THRESHOLD
+2.NOICE REDUCTION
+3.ORIENATION
+OCR
 </p>
-
-
-
+<ul>
 <h1>Constraints</h1>
-Machine should read image clearly without blurring the image.
-
-
-No noise reduction in image.
-
-
-Image should be of good quality.
-
-
-trendy.
+<li>Machine should read image clearly without blurring the image.</li>
+<li>No noise reduction in image.</li>
+<li>Image should be of good quality.</li>
+</ul>
 
