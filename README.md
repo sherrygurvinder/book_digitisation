@@ -33,24 +33,29 @@ Text detection and recognition in general have quite a lot of relevant applicati
 </ul>
 <h1>Implementation</h1>
 <p align="center">
-Steps
+Steps<br>
 1.  SCAN THE BOOK<br>
+         <br>
          |<br>
-         |<br>
+          <br>
 2.  EXTRACT PAGES<br>
+         <br>
          |<br>
-         |<br>
+          <br>
 3.  REFINE IMAGES<br>
+         <br>
          |<br>
-         |<br>
+          <br>
 3.1 CHANGE THRESHOLD<br>
 3.2 NOICE REDUCTION<br>
 3.3 ORIENATION<br>
+         <br>
          |<br>
-         |<br>
+          <br>
 4.  OCR<br>
+         <br>
          |<br>
-         |<br>
+          <br>
 5.  Result stores into specifice format for eg:pdf,word,etc<br>  
 
 </p>
