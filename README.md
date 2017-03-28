@@ -13,7 +13,8 @@ Text detection and recognition in general have quite a lot of relevant applicati
   <h2> Hardware Requirements:-</h2>
     <li> 1.OS Linux 64 bit</li>
     <li> 2.512 GB (Minimum) On Linux</li>
-<ul> 
+</ul> 
+  <ul>
   <h2> Software Requirements:-</h2>
   <li>1.Python3 
      <ul> 
