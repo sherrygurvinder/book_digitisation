@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}
+    Log In
+{% endblock %}
+<style>
+</style>
+{% block main %}
+<div class="row" id="row" style=" margin-right:50px;margin-left: 50px;">
+  <div class="col-sm-12">
+    <p class="bg-primary" align="center">
+        This website is for you!<br>  here you can save your rough tough book
+        into your favrouite editable format just upload your file
+    </p>
+    <form class="form-control" action="" method="post">
+        <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+        <div>
+            <p class="size" data-dz-size></p>
+            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary start">
+                <i class="glyphicon glyphicon-upload"></i>
+                <span>Start</span>
+                </button>
+                <button data-dz-remove class="btn btn-warning cancel">
+                <i class="glyphicon glyphicon-ban-circle"></i>
+                <span>Cancel</span>
+                </button>
+                <button data-dz-remove class="btn btn-danger delete">
+                <i class="glyphicon glyphicon-trash"></i>
+                <span>Delete</span>
+            </button>
+        </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

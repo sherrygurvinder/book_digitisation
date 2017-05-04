@@ -1,0 +1,23 @@
+html
+{ height: 100%;}
+
+*
+{ margin: 0;
+  padding: 0;}
+textarea
+{
+      margin: 0px;
+    width: 567px;
+    height: 286px;
+}
+body
+{ font: normal .80em 'trebuchet ms', arial, sans-serif;
+  background: #F0EFE2 url(background.png) repeat;
+  color: #FFF;}
+
+p
+{ padding: 0 0 20px 0;
+  line-height: 1.7em;}
+
+img
+{ border: 0;}

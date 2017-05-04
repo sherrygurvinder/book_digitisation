@@ -68,4 +68,3 @@ Steps
 <li>No noise reduction in image.</li>
 <li>Image should be of good quality.</li>
 </ul>
-
