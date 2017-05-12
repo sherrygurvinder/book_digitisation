@@ -11,8 +11,8 @@
         This website is for you!<br>  here you can save your rough tough book
         into your favrouite editable format just upload your file
     </p>
-    <form class="form-control" action="" method="post">
-        <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+    <form class="form-control" action="{{ url_for('fileupload') }}" method="post" enctype=multipart/form-data>
+        <input type=file name=file>
         <div>
             <p class="size" data-dz-size></p>
             <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -20,18 +20,9 @@
             </div>
         </div>
         <div>
-            <button class="btn btn-primary start">
-                <i class="glyphicon glyphicon-upload"></i>
-                <span>Start</span>
-                </button>
-                <button data-dz-remove class="btn btn-warning cancel">
-                <i class="glyphicon glyphicon-ban-circle"></i>
-                <span>Cancel</span>
-                </button>
-                <button data-dz-remove class="btn btn-danger delete">
-                <i class="glyphicon glyphicon-trash"></i>
-                <span>Delete</span>
-            </button>
+                <input type="submit" class="btn btn-primary" name="start" value="start">
+                <input type="submit" class="btn btn-warning" name="cancel" value="cancel">
+                <input type="submit" class="btn btn-danger" name="delete" value="delete">
         </div>
     </form>
   </div>
