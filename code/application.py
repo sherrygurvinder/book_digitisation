@@ -20,6 +20,7 @@ def allowed_file(filename):
 @app.route("/fileupload.html",methods=["GET","POST"])
 def fileupload():
     print("..............................hello")
+    filepath=""
     if request.form['start'] == "start":
     # check if the post request has the file part
         file = request.files['file']
@@ -34,10 +35,11 @@ def fileupload():
                 filename = secure_filename(file.filename)
                 print("...........")
                 print(filename)
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                #return render_template('fileupload.html',filename=filename)
+                filepath=file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                print(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+                return render_template('fileupload.html',filename=os.path.join(app.config['UPLOAD_FOLDER'],filename))
                 #return redirect(url_for('fileupload.html',filename=filename))
-                return redirect(url_for('uploaded_file', filename=filename))
+                #return redirect(url_for('uploaded_file', filename=filename))
 
 
     if request.form['start']=="start1":
@@ -50,12 +52,12 @@ def fileupload():
     else:
         print("hi iam else")
 
-@app.route('/uploads/<filename>')
-def uploaded_file(filename):
-    print(".........gurvinder")
-    filename = 'C:/traning/'+ filename
-    return render_template('fileupload.html', filename=filename)
-@app.route('/uploads/<filename>')
-def send_file(filename):
-    return send_from_directory(UPLOAD_FOLDER, filename)
+#@app.route('/uploads/<filename>')
+#def uploaded_file(filename):
+ #   print(".........gurvinder")
+  #  filename = 'C:/traning/'+ filename
+   # return render_template('fileupload.html', filename=filename)
+#@app.route('/uploads/<filename>')
+#def send_file(filename):
+ #   return send_from_directory(UPLOAD_FOLDER, filename)
 
