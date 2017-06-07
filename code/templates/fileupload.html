@@ -2,14 +2,35 @@
 {% block title %}
     Log In
 {% endblock %}
-<style>
-</style>
+
 {% block main %}
+    <style>
+        img
+        {
+            width: 350px;
+            height: 300px;
+        }
+        textarea
+        {
+            width: 420px;
+            height: 300px;
+        }
+        p
+        {
+            width: 350px;
+            height: 300px;
+        }
+    </style>
 
+    <p>
+        <img src= "{{ url_for('static', filename= filename) }}"/>
+    </p>
 
-<p size="100">
-    hello
-    {{filename}}
-</p>
-<img src="file:///C:/traning/DSC00186_2.JPG" alt="Smiley face" height="42" width="42">
+    <textarea style="">
+        {% for data in filedata %}
+            {{ data }}
+        {% endfor %}
+    </textarea>
+
+    </p>
 {% endblock %}

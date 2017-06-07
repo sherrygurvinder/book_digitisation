@@ -5,7 +5,21 @@
 <style>
 </style>
 {% block main %}
-<div class="row" id="row" style=" margin-right:50px;margin-left: 50px;">
+
+
+
+<div>
+
+
+    <div>
+
+
+
+
+
+    </div>
+
+    <div class="row" id="row" style=" margin-right:50px;margin-left: 50px;">
   <div class="col-sm-12">
     <p class="bg-primary" align="center">
         This website is for you!<br>  here you can save your rough tough book
@@ -20,11 +34,23 @@
             </div>
         </div>
         <div>
-                <input type="submit" class="btn btn-primary" name="start" value="start">
-                <input type="submit" class="btn btn-warning" name="cancel" value="cancel">
+                <input type="submit" class="btn btn-primary" name="start" value="image">
+                <input type="submit" class="btn btn-warning" name="start" value="pdf">
                 <input type="submit" class="btn btn-danger" name="delete" value="delete">
         </div>
     </form>
   </div>
 </div>
+
+
+
+</div>
+
+
+<script>
+    $(document).ready(function(){
+    $("#row").hide();
+        alert("java sceipt run");
+});
+</script>
 {% endblock %}

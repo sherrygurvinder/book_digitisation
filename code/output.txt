@@ -1,0 +1,960 @@
+Deep Neural Networks are Easily Fooled: Installation Guide
+High Confidence Prediction for Unrecognizable Images Updated 2015_01_13
+
+ 
+
+6. List of experiment to reproduce :
+0 Direct Encoding (section 3.1 and 3.3 in the paper)
+
+ 
+ 
+  
+  
+
+I MNIST:
+I ImageNet:
+0 Indirect Enc paper)
+- MNIST: 
+I ImageNet:
+
+7. Configure the experiment in the cpp file
+0 Afte ' '
+
+ 
+
+piling successfully, now configure it as you want.
+
+: ontains generic parameters which are by default
+overwritten) by the experiments:
+
+: size of the images to evolve (default to 256)
+: crop size according to Caffe config (default to 227)
+: use crop or not.
+
+ 
+
+  
+ 
+  
+ 
+
+2° True: Use 10 crops
+f False: Use 1 center crop
+5 e for MNIST grayscale or ImageNet color images.
+
+5 : default to 1000 corresponding to 1000 ImageNet
+categories. Change to 10 for MNIST.
+° Note: in the experiment cpp file also update  o be equal to the
+num_categories unless you know MAP-Elites rea y we to experiment
+differently.
+‘ t
+
+ 
+
+   
+ 
+   
+ 
+ 
+ 
+ 
+ 
+
+  
+
+ the number of generations to run.
+b  population
+ path to the prototxt file used by your model
+
+path to your model
+how frequently your images will be printed out
+I To run on cluster with MP1, uncomment this line
+
+ 
+
+I To run locally on a single core, uncomment this line, and comment out the above
+Deep Neural Networks are Easily Fooled:
+
+Installation Guide
+High Confidence Prediction for Unrecognizable Images
+
+Updated 2015-01-13
+
+I Sending an image in memory (OpenCV::Mat) to Caffe for evaluation
+I Ge ' for that image
+
+   
+
+0 Install the Caffe libraries
+
+I Install the Caffe library (caffe.so and caffe.a) and its headers so that Sferes can find
+it for compilation.
+
+° You can refer to w w w w w w w w w w w w w w w w w w 0 see how we install it on our system.
+
+I Modify Sferes waf confi uration file according to your system
+° In file E
+° Make sure that the path in
+
+5. Compile a Sferes experiment:
+
+0 Our Sferes experiments for the paper are located in the
+0 Update the ' '
+I In file: :
+I Modify the fiel o a file name in the experiment folder
+
+0 Make sure that the code compiles correctly with waf:
+
+ 
+
+  
+
+points to the correct locationsg
+
+ 
+
+ile an experiment:
+
+   
+  
+
+ 
+
+for example parameters we used on our system
+
+I This 15 the result of our working waf -- configure for your reference
+Deep Neural Networks are Easily Fooled: Installation Guide
+High Confidence Prediction for Unrecognizable Images Updated 2015_01_13
+
+INSTALLATION GUIDE
+
+A. Overview
+This guide shows how to run the code used to produce the images in our paper:
+
+http_://www.evolvingai.org/fooling
+
+B. Requirements
+Software:
+
+This is an installation process that requires two main software packages (included in this package):
+° Caffe:http://caffe.berkeleyvisionbrg
+0 Our libraries installed to work with Caffe
+I Cuda 6.0
+I Boost 1.52
+° Sferes:https://github.com/jbmouret/sferesZ
+0 Our libraries installed to work with Caffe
+I OpenCV 2.4.10
+I Boost 1.52
+
+Computing Environment:
+° An MNIST experiment (Fig. 4, 5 in the paper) can be run directly on a local machine (4-core)
+within a reasonable amount of time (around 5 minutes or less for 200 generations)
+
+° An ImageNet experiment needs to be run on a cluster environment. It took us 4 days X 128
+cores to run 5000 generations and produce 1000 images (Fig. 8 in the paper).
+
+C. Installation
+1. Install Caffe and its required libraries.
+0 The specific version provided is different from the Caffe master branch and it has the
+
+modification that enables feeding OpenCV data from memory to a Caffe model for
+evaluation via ImageDataLayer.
+
+O Caffe installation guide: http://caffe.berkeleyvision.org/installation.html
+2. Find a model you want to “fool” or train one yourself. We used the BVLC CaffeNet model
+provided by Caffe.
+
+0 See the list of models ﬂ.
+
+0 Make sure that it is running and gives you validation / test errors as expected.
+3. Install Sferes and its required libraries:
+
+0 The specific Sferes version provided has all the modules needed to run the experiment
+and is very similar to (but not the same as) the Sferes master branch.
+
+0 Sferes installation guide: http_s://github.com/jbmouret/sferesZ/wiki/Compilation
+4. Linking Caffe and Sferes:
+
+0 Our code already does the linking between Caffe and Sferes:
+Deep Neural Networks are Easily Fooled:
+
+Installation Guide
+High Confidence Prediction for Unrecognizable Images
+
+Updated 2015-01-13
+
+ 
+
+8. Test running your experiment:
+0 The binar will be located in the directories:
+
+ 
+
+0 If running locally, you can test running this binar directly and the result will be written
+in a newly created directory: “mmm” (i.e. .~
+
+I The fitness or confidence score of the champions in each eneration will be written
+in the archive_X.dat (e.g., for generation 235, see
+
+° The first column is the category index
+° The second column is the fitness
+Images are or di
+
+  
+
+ 
+
+(e.g., for generation 236, see
+
+   
+
+9. To run on a cluster
+
+0 We use 128 cores usually to run ImageNet eXpe '
+
+0 If you need help configuring, consult the file
+schedule jobs on a cluster environment.
+
+ 
+
+   
+ 
+
+. This is how we
+
+10. Caffe version
+
+0 Our particular Caffe version requires a dummy parameter in the prototXt in order
+to initialize the input data blobs at the IMAGE_DATA layer properly.
+
+I Please refer to the  directory on how we configure the prototXt
+O The batch size in the prototXt file is default to 10 as we use 10 crops per evaluation.
+
+  
+
+ 
+
+For specific Sferes or Caffe questions, please see their github pages or Google groups.
+For other questions regarding these experiments from our paper, please don't hesitate to ask. :)
+
+Cheers,
+Deep Neural Networks are Easily Fooled: Installation Guide
+High Confidence Prediction for Unrecognizable Images Updated 2015_01_13
+
+ 
+
+6. List of experiment to reproduce :
+0 Direct Encoding (section 3.1 and 3.3 in the paper)
+
+ 
+ 
+  
+  
+
+I MNIST:
+I ImageNet:
+0 Indirect Enc paper)
+- MNIST: 
+I ImageNet:
+
+7. Configure the experiment in the cpp file
+0 Afte ' '
+
+ 
+
+piling successfully, now configure it as you want.
+
+: ontains generic parameters which are by default
+overwritten) by the experiments:
+
+: size of the images to evolve (default to 256)
+: crop size according to Caffe config (default to 227)
+: use crop or not.
+
+ 
+
+  
+ 
+  
+ 
+
+2° True: Use 10 crops
+f False: Use 1 center crop
+5 e for MNIST grayscale or ImageNet color images.
+
+5 : default to 1000 corresponding to 1000 ImageNet
+categories. Change to 10 for MNIST.
+° Note: in the experiment cpp file also update  o be equal to the
+num_categories unless you know MAP-Elites rea y we to experiment
+differently.
+‘ t
+
+ 
+
+   
+ 
+   
+ 
+ 
+ 
+ 
+ 
+
+  
+
+ the number of generations to run.
+b  population
+ path to the prototxt file used by your model
+
+path to your model
+how frequently your images will be printed out
+I To run on cluster with MP1, uncomment this line
+
+ 
+
+I To run locally on a single core, uncomment this line, and comment out the above
+Deep Neural Networks are Easily Fooled:
+
+Installation Guide
+High Confidence Prediction for Unrecognizable Images
+
+Updated 2015-01-13
+
+I Sending an image in memory (OpenCV::Mat) to Caffe for evaluation
+I Ge ' for that image
+
+   
+
+0 Install the Caffe libraries
+
+I Install the Caffe library (caffe.so and caffe.a) and its headers so that Sferes can find
+it for compilation.
+
+° You can refer to w w w w w w w w w w w w w w w w w w 0 see how we install it on our system.
+
+I Modify Sferes waf confi uration file according to your system
+° In file E
+° Make sure that the path in
+
+5. Compile a Sferes experiment:
+
+0 Our Sferes experiments for the paper are located in the
+0 Update the ' '
+I In file: :
+I Modify the fiel o a file name in the experiment folder
+
+0 Make sure that the code compiles correctly with waf:
+
+ 
+
+  
+
+points to the correct locationsg
+
+ 
+
+ile an experiment:
+
+   
+  
+
+ 
+
+for example parameters we used on our system
+
+I This 15 the result of our working waf -- configure for your reference
+Deep Neural Networks are Easily Fooled: Installation Guide
+High Confidence Prediction for Unrecognizable Images Updated 2015_01_13
+
+INSTALLATION GUIDE
+
+A. Overview
+This guide shows how to run the code used to produce the images in our paper:
+
+http_://www.evolvingai.org/fooling
+
+B. Requirements
+Software:
+
+This is an installation process that requires two main software packages (included in this package):
+° Caffe:http://caffe.berkeleyvisionbrg
+0 Our libraries installed to work with Caffe
+I Cuda 6.0
+I Boost 1.52
+° Sferes:https://github.com/jbmouret/sferesZ
+0 Our libraries installed to work with Caffe
+I OpenCV 2.4.10
+I Boost 1.52
+
+Computing Environment:
+° An MNIST experiment (Fig. 4, 5 in the paper) can be run directly on a local machine (4-core)
+within a reasonable amount of time (around 5 minutes or less for 200 generations)
+
+° An ImageNet experiment needs to be run on a cluster environment. It took us 4 days X 128
+cores to run 5000 generations and produce 1000 images (Fig. 8 in the paper).
+
+C. Installation
+1. Install Caffe and its required libraries.
+0 The specific version provided is different from the Caffe master branch and it has the
+
+modification that enables feeding OpenCV data from memory to a Caffe model for
+evaluation via ImageDataLayer.
+
+O Caffe installation guide: http://caffe.berkeleyvision.org/installation.html
+2. Find a model you want to “fool” or train one yourself. We used the BVLC CaffeNet model
+provided by Caffe.
+
+0 See the list of models ﬂ.
+
+0 Make sure that it is running and gives you validation / test errors as expected.
+3. Install Sferes and its required libraries:
+
+0 The specific Sferes version provided has all the modules needed to run the experiment
+and is very similar to (but not the same as) the Sferes master branch.
+
+0 Sferes installation guide: http_s://github.com/jbmouret/sferesZ/wiki/Compilation
+4. Linking Caffe and Sferes:
+
+0 Our code already does the linking between Caffe and Sferes:
+Deep Neural Networks are Easily Fooled:
+
+Installation Guide
+High Confidence Prediction for Unrecognizable Images
+
+Updated 2015-01-13
+
+ 
+
+8. Test running your experiment:
+0 The binar will be located in the directories:
+
+ 
+
+0 If running locally, you can test running this binar directly and the result will be written
+in a newly created directory: “mmm” (i.e. .~
+
+I The fitness or confidence score of the champions in each eneration will be written
+in the archive_X.dat (e.g., for generation 235, see
+
+° The first column is the category index
+° The second column is the fitness
+Images are or di
+
+  
+
+ 
+
+(e.g., for generation 236, see
+
+   
+
+9. To run on a cluster
+
+0 We use 128 cores usually to run ImageNet eXpe '
+
+0 If you need help configuring, consult the file
+schedule jobs on a cluster environment.
+
+ 
+
+   
+ 
+
+. This is how we
+
+10. Caffe version
+
+0 Our particular Caffe version requires a dummy parameter in the prototXt in order
+to initialize the input data blobs at the IMAGE_DATA layer properly.
+
+I Please refer to the  directory on how we configure the prototXt
+O The batch size in the prototXt file is default to 10 as we use 10 crops per evaluation.
+
+  
+
+ 
+
+For specific Sferes or Caffe questions, please see their github pages or Google groups.
+For other questions regarding these experiments from our paper, please don't hesitate to ask. :)
+
+Cheers,
+Deep Neural Networks are Easily Fooled: Installation Guide
+High Confidence Prediction for Unrecognizable Images Updated 2015_01_13
+
+ 
+
+6. List of experiment to reproduce :
+0 Direct Encoding (section 3.1 and 3.3 in the paper)
+
+ 
+ 
+  
+  
+
+I MNIST:
+I ImageNet:
+0 Indirect Enc paper)
+- MNIST: 
+I ImageNet:
+
+7. Configure the experiment in the cpp file
+0 Afte ' '
+
+ 
+
+piling successfully, now configure it as you want.
+
+: ontains generic parameters which are by default
+overwritten) by the experiments:
+
+: size of the images to evolve (default to 256)
+: crop size according to Caffe config (default to 227)
+: use crop or not.
+
+ 
+
+  
+ 
+  
+ 
+
+2° True: Use 10 crops
+f False: Use 1 center crop
+5 e for MNIST grayscale or ImageNet color images.
+
+5 : default to 1000 corresponding to 1000 ImageNet
+categories. Change to 10 for MNIST.
+° Note: in the experiment cpp file also update  o be equal to the
+num_categories unless you know MAP-Elites rea y we to experiment
+differently.
+‘ t
+
+ 
+
+   
+ 
+   
+ 
+ 
+ 
+ 
+ 
+
+  
+
+ the number of generations to run.
+b  population
+ path to the prototxt file used by your model
+
+path to your model
+how frequently your images will be printed out
+I To run on cluster with MP1, uncomment this line
+
+ 
+
+I To run locally on a single core, uncomment this line, and comment out the above
+Deep Neural Networks are Easily Fooled:
+
+Installation Guide
+High Confidence Prediction for Unrecognizable Images
+
+Updated 2015-01-13
+
+I Sending an image in memory (OpenCV::Mat) to Caffe for evaluation
+I Ge ' for that image
+
+   
+
+0 Install the Caffe libraries
+
+I Install the Caffe library (caffe.so and caffe.a) and its headers so that Sferes can find
+it for compilation.
+
+° You can refer to w w w w w w w w w w w w w w w w w w 0 see how we install it on our system.
+
+I Modify Sferes waf confi uration file according to your system
+° In file E
+° Make sure that the path in
+
+5. Compile a Sferes experiment:
+
+0 Our Sferes experiments for the paper are located in the
+0 Update the ' '
+I In file: :
+I Modify the fiel o a file name in the experiment folder
+
+0 Make sure that the code compiles correctly with waf:
+
+ 
+
+  
+
+points to the correct locationsg
+
+ 
+
+ile an experiment:
+
+   
+  
+
+ 
+
+for example parameters we used on our system
+
+I This 15 the result of our working waf -- configure for your reference
+Deep Neural Networks are Easily Fooled: Installation Guide
+High Confidence Prediction for Unrecognizable Images Updated 2015_01_13
+
+INSTALLATION GUIDE
+
+A. Overview
+This guide shows how to run the code used to produce the images in our paper:
+
+http_://www.evolvingai.org/fooling
+
+B. Requirements
+Software:
+
+This is an installation process that requires two main software packages (included in this package):
+° Caffe:http://caffe.berkeleyvisionbrg
+0 Our libraries installed to work with Caffe
+I Cuda 6.0
+I Boost 1.52
+° Sferes:https://github.com/jbmouret/sferesZ
+0 Our libraries installed to work with Caffe
+I OpenCV 2.4.10
+I Boost 1.52
+
+Computing Environment:
+° An MNIST experiment (Fig. 4, 5 in the paper) can be run directly on a local machine (4-core)
+within a reasonable amount of time (around 5 minutes or less for 200 generations)
+
+° An ImageNet experiment needs to be run on a cluster environment. It took us 4 days X 128
+cores to run 5000 generations and produce 1000 images (Fig. 8 in the paper).
+
+C. Installation
+1. Install Caffe and its required libraries.
+0 The specific version provided is different from the Caffe master branch and it has the
+
+modification that enables feeding OpenCV data from memory to a Caffe model for
+evaluation via ImageDataLayer.
+
+O Caffe installation guide: http://caffe.berkeleyvision.org/installation.html
+2. Find a model you want to “fool” or train one yourself. We used the BVLC CaffeNet model
+provided by Caffe.
+
+0 See the list of models ﬂ.
+
+0 Make sure that it is running and gives you validation / test errors as expected.
+3. Install Sferes and its required libraries:
+
+0 The specific Sferes version provided has all the modules needed to run the experiment
+and is very similar to (but not the same as) the Sferes master branch.
+
+0 Sferes installation guide: http_s://github.com/jbmouret/sferesZ/wiki/Compilation
+4. Linking Caffe and Sferes:
+
+0 Our code already does the linking between Caffe and Sferes:
+Deep Neural Networks are Easily Fooled:
+
+Installation Guide
+High Confidence Prediction for Unrecognizable Images
+
+Updated 2015-01-13
+
+ 
+
+8. Test running your experiment:
+0 The binar will be located in the directories:
+
+ 
+
+0 If running locally, you can test running this binar directly and the result will be written
+in a newly created directory: “mmm” (i.e. .~
+
+I The fitness or confidence score of the champions in each eneration will be written
+in the archive_X.dat (e.g., for generation 235, see
+
+° The first column is the category index
+° The second column is the fitness
+Images are or di
+
+  
+
+ 
+
+(e.g., for generation 236, see
+
+   
+
+9. To run on a cluster
+
+0 We use 128 cores usually to run ImageNet eXpe '
+
+0 If you need help configuring, consult the file
+schedule jobs on a cluster environment.
+
+ 
+
+   
+ 
+
+. This is how we
+
+10. Caffe version
+
+0 Our particular Caffe version requires a dummy parameter in the prototXt in order
+to initialize the input data blobs at the IMAGE_DATA layer properly.
+
+I Please refer to the  directory on how we configure the prototXt
+O The batch size in the prototXt file is default to 10 as we use 10 crops per evaluation.
+
+  
+
+ 
+
+For specific Sferes or Caffe questions, please see their github pages or Google groups.
+For other questions regarding these experiments from our paper, please don't hesitate to ask. :)
+
+Cheers,
+Deep Neural Networks are Easily Fooled: Installation Guide
+High Confidence Prediction for Unrecognizable Images Updated 2015_01_13
+
+ 
+
+6. List of experiment to reproduce :
+0 Direct Encoding (section 3.1 and 3.3 in the paper)
+
+ 
+ 
+  
+  
+
+I MNIST:
+I ImageNet:
+0 Indirect Enc paper)
+- MNIST: 
+I ImageNet:
+
+7. Configure the experiment in the cpp file
+0 Afte ' '
+
+ 
+
+piling successfully, now configure it as you want.
+
+: ontains generic parameters which are by default
+overwritten) by the experiments:
+
+: size of the images to evolve (default to 256)
+: crop size according to Caffe config (default to 227)
+: use crop or not.
+
+ 
+
+  
+ 
+  
+ 
+
+2° True: Use 10 crops
+f False: Use 1 center crop
+5 e for MNIST grayscale or ImageNet color images.
+
+5 : default to 1000 corresponding to 1000 ImageNet
+categories. Change to 10 for MNIST.
+° Note: in the experiment cpp file also update  o be equal to the
+num_categories unless you know MAP-Elites rea y we to experiment
+differently.
+‘ t
+
+ 
+
+   
+ 
+   
+ 
+ 
+ 
+ 
+ 
+
+  
+
+ the number of generations to run.
+b  population
+ path to the prototxt file used by your model
+
+path to your model
+how frequently your images will be printed out
+I To run on cluster with MP1, uncomment this line
+
+ 
+
+I To run locally on a single core, uncomment this line, and comment out the above
+Deep Neural Networks are Easily Fooled:
+
+Installation Guide
+High Confidence Prediction for Unrecognizable Images
+
+Updated 2015-01-13
+
+I Sending an image in memory (OpenCV::Mat) to Caffe for evaluation
+I Ge ' for that image
+
+   
+
+0 Install the Caffe libraries
+
+I Install the Caffe library (caffe.so and caffe.a) and its headers so that Sferes can find
+it for compilation.
+
+° You can refer to w w w w w w w w w w w w w w w w w w 0 see how we install it on our system.
+
+I Modify Sferes waf confi uration file according to your system
+° In file E
+° Make sure that the path in
+
+5. Compile a Sferes experiment:
+
+0 Our Sferes experiments for the paper are located in the
+0 Update the ' '
+I In file: :
+I Modify the fiel o a file name in the experiment folder
+
+0 Make sure that the code compiles correctly with waf:
+
+ 
+
+  
+
+points to the correct locationsg
+
+ 
+
+ile an experiment:
+
+   
+  
+
+ 
+
+for example parameters we used on our system
+
+I This 15 the result of our working waf -- configure for your reference
+Deep Neural Networks are Easily Fooled: Installation Guide
+High Confidence Prediction for Unrecognizable Images Updated 2015_01_13
+
+INSTALLATION GUIDE
+
+A. Overview
+This guide shows how to run the code used to produce the images in our paper:
+
+http_://www.evolvingai.org/fooling
+
+B. Requirements
+Software:
+
+This is an installation process that requires two main software packages (included in this package):
+° Caffe:http://caffe.berkeleyvisionbrg
+0 Our libraries installed to work with Caffe
+I Cuda 6.0
+I Boost 1.52
+° Sferes:https://github.com/jbmouret/sferesZ
+0 Our libraries installed to work with Caffe
+I OpenCV 2.4.10
+I Boost 1.52
+
+Computing Environment:
+° An MNIST experiment (Fig. 4, 5 in the paper) can be run directly on a local machine (4-core)
+within a reasonable amount of time (around 5 minutes or less for 200 generations)
+
+° An ImageNet experiment needs to be run on a cluster environment. It took us 4 days X 128
+cores to run 5000 generations and produce 1000 images (Fig. 8 in the paper).
+
+C. Installation
+1. Install Caffe and its required libraries.
+0 The specific version provided is different from the Caffe master branch and it has the
+
+modification that enables feeding OpenCV data from memory to a Caffe model for
+evaluation via ImageDataLayer.
+
+O Caffe installation guide: http://caffe.berkeleyvision.org/installation.html
+2. Find a model you want to “fool” or train one yourself. We used the BVLC CaffeNet model
+provided by Caffe.
+
+0 See the list of models ﬂ.
+
+0 Make sure that it is running and gives you validation / test errors as expected.
+3. Install Sferes and its required libraries:
+
+0 The specific Sferes version provided has all the modules needed to run the experiment
+and is very similar to (but not the same as) the Sferes master branch.
+
+0 Sferes installation guide: http_s://github.com/jbmouret/sferesZ/wiki/Compilation
+4. Linking Caffe and Sferes:
+
+0 Our code already does the linking between Caffe and Sferes:
+Deep Neural Networks are Easily Fooled:
+
+Installation Guide
+High Confidence Prediction for Unrecognizable Images
+
+Updated 2015-01-13
+
+ 
+
+8. Test running your experiment:
+0 The binar will be located in the directories:
+
+ 
+
+0 If running locally, you can test running this binar directly and the result will be written
+in a newly created directory: “mmm” (i.e. .~
+
+I The fitness or confidence score of the champions in each eneration will be written
+in the archive_X.dat (e.g., for generation 235, see
+
+° The first column is the category index
+° The second column is the fitness
+Images are or di
+
+  
+
+ 
+
+(e.g., for generation 236, see
+
+   
+
+9. To run on a cluster
+
+0 We use 128 cores usually to run ImageNet eXpe '
+
+0 If you need help configuring, consult the file
+schedule jobs on a cluster environment.
+
+ 
+
+   
+ 
+
+. This is how we
+
+10. Caffe version
+
+0 Our particular Caffe version requires a dummy parameter in the prototXt in order
+to initialize the input data blobs at the IMAGE_DATA layer properly.
+
+I Please refer to the  directory on how we configure the prototXt
+O The batch size in the prototXt file is default to 10 as we use 10 crops per evaluation.
+
+  
+
+ 
+
+For specific Sferes or Caffe questions, please see their github pages or Google groups.
+For other questions regarding these experiments from our paper, please don't hesitate to ask. :)
+
+Cheers,
